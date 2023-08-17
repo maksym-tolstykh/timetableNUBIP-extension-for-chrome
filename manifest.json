@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Швидкий доступ до розкладу занять 'ІФК'",
+  "description": "Розширення яке допоможе швидше знайти потрібне посилання на навчальний портал, офіційний сайт коледжу та розклад.",
+  "version": "1.0.1",
+  "author": "Maksym Tolstykh",
+  "icons": {
+    "192": "logo192.png"
+  },
+  "action": {
+    "default_title": "Швидкий доступ до розкладу заннять 'ІФК'",
+    "default_icon": "logo.png",
+    "default_popup": "timetable.html"
+  },
+  "permissions": []
+}

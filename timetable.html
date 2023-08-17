@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Швидкий доступ до розкладу заннять 'НУБіП</title>
+</head>
+
+<body>
+    <div class="side-bar col-xxl-2 col-md-1 offset-md-1">
+        <div class="fast-link">
+            <a target="_blank" href="https://nubip.edu.ua/">НУБіП</a>
+            <span>·</span>
+            <a target="_blank" href="https://elearn.nubip.edu.ua/my/">E-learn</a>
+        </div>
+        <div class="rozklad">
+            <div class="fast-link">
+                <a target="_blank" href="https://meet.google.com/erp-awbg-qqs">Практичні</a>
+                <span>·</span>
+                <a target="_blank" href="https://meet.google.com/poo-swfw-ahp">Лекції</a>
+            </div>
+            <h1 class="main-title">Розклад</h1>
+            <!-- <img src="./rozklad.jpg" alt="" style="width:100%;"> -->
+            <h3 id="weekType" class="">---</h3>
+            <div class="rozklad-table">
+                <table>
+                    <tr>
+                        <th>Час</th>
+                        <th>Понеділок</th>
+                        <th>Вівторок</th>
+                        <th>Середа</th>
+                        <th>Четвер</th>
+                        <th>П'ятниця</th>
+                    </tr>
+                    <tr>
+                        <td>1. 8:30-9:50</td>
+                        <td id="mo1">---</td>
+                        <td id="tu1">---</td>
+                        <td id="we1">Технологія програмування баз даних</td>
+                        <td id="th1">---</td>
+                        <td id="fr1">Програмування .Net</td>
+                    </tr>
+                    <tr>
+                        <td>2. 10:10-11:30</td>
+                        <td id="mo2">---</td>
+                        <td id="tu2">---</td>
+                        <td id="we2"><a target="_blank" href="https://meet.google.com/gjm-fjpw-ved">В: Інтерактивна
+                                комп'ютерна
+                                графіка</a></td>
+                        <td id="th2">---</td>
+                        <td id="fr2">Операційні системи</td>
+                    </tr>
+                    <tr>
+                        <td>3. 11:50-13:10</td>
+                        <td id="mo3">Програмування для мобільних платформ</td>
+                        <td id="tu3"><a target="_blank" href="https://meet.google.com/gjm-fjpw-ved">В: Інтерактивна
+                                комп'ютерна
+                                графіка</a></td>
+                        <td id="we3">Комп'ютерна графіка</td>
+                        <td id="th3"><a target="_blank" href="https://meet.google.com/yfe-kbqz-mbm">В: Аналітика з R</a>
+                        </td>
+                        <td id="fr3">Програмування для мобільних платформ</td>
+                    </tr>
+                    <tr>
+                        <td>4. 13:30-14:50</td>
+                        <td id="mo4">Операційні системи</td>
+                        <td id="tu4">
+                            <div style="border-bottom: solid 3px #1b1e20;">---</div>
+                            <div>Технології програмування баз даних</div>
+                        </td>
+                        <td id="we4">---</td>
+                        <td id="th4">---</td>
+                        <td id="fr4">---</td>
+                    </tr>
+                    <tr>
+                        <td>5. 15:10-16:30</td>
+                        <td id="mo5">
+                            <div style="border-bottom: solid 3px #1b1e20;">Комп'ютерна графіка</div>
+                            <div>-----</div>
+                        </td>
+                        <td id="tu5">Програмування .Net</td>
+                        <td id="we5">---</td>
+                        <td id="th5">---</td>
+                        <td id="fr5">---</td>
+                    </tr>
+                    <tr>
+                        <td>6. 16:50-18:10</td>
+                        <td id="mo6"><a target="_blank" href="https://meet.google.com/yfe-kbqz-mbm">В: Аналітика з R</a>
+                        </td>
+                        <td id="tu6">---</td>
+                        <td id="we6">---</td>
+                        <td id="th6">---</td>
+                        <td id="fr6">---</td>
+                    </tr>
+                    <tr>
+                        <td>7. 18:30-19:50</td>
+                        <td id="mo7">---</td>
+                        <td id="tu7">---</td>
+                        <td id="we7">---</td>
+                        <td id="th7">---</td>
+                        <td id="fr7">---</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    td {
+        border: solid 1px #1b1e20;
+    }
+
+    .rozklad-table {
+        background-color: #ffffff;
+        padding: 10px;
+        display: flex;
+
+    }
+
+
+    .fast-link span {
+        font-weight: 800;
+        color: white;
+        font-size: 22px;
+
+    }
+
+    .fast-link a {
+        text-decoration: none;
+        color: #fdb622;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .fast-link a:hover {
+        color: #8ac832;
+    }
+
+
+
+    body {
+        min-width: 700px;
+
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #ffffff;
+        padding: 10px;
+    }
+
+    .side-bar {
+        text-align: center;
+        background-color: #1b1e20;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    .rozklad h1 {
+        font-size: 35px;
+        color: #fdb622;
+        margin-bottom: 25px;
+        margin-top: 0px;
+    }
+
+    #weekType {
+        color: #fdb622;
+    }
+
+    .main-title {
+
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .rozklad-contnent li {
+        margin-bottom: 8px;
+    }
+
+    .rozklad-contnent a {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 800;
+        color: white;
+    }
+
+    .rozklad-contnent a:hover {
+        color: #8ac832;
+    }
+</style>
+
+<script src="/main.js" async></script>
+
+
+</html>
