@@ -26,6 +26,22 @@ if (currentDay.getDay() === 1 && canUpdate === "true") {
 
 weekTypeContainer.innerText = startWeekType;
 
+//ID 
+const allTagA = document.querySelectorAll('a');
+const userIdInput = document.querySelector('#userId');
+
+const userId = localStorage.getItem("userId") || 0;
+userIdInput.value = userId
+
+userIdInput.addEventListener('change', (e) => {
+    localStorage.setItem("userId", e.target.value)
+});
+
+allTagA.forEach(item => {
+    item.setAttribute("href", `${item.getAttribute('href')}?authuser=${userId}`);
+});
+
+
 
 // Підсвічування поточного дня
 const daysInTable = document.querySelectorAll("th");
@@ -131,19 +147,6 @@ parseLesson();
 
 
 
-const allTagA = document.querySelectorAll('a');
-const userIdInput = document.querySelector('#userId');
-
-const userId = localStorage.getItem("userId") || 0;
-userIdInput.value = userId
-
-userIdInput.addEventListener('change', (e) => {
-    localStorage.setItem("userId", e.target.value)
-});
-
-allTagA.forEach(item => {
-    item.setAttribute("href", `${item.getAttribute('href')}?authuser=${userId}`);
-});
 
 
 
