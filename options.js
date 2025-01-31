@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-
-
     //*
     //  Отримання посилань на сторінці опцій
     //  */
@@ -57,8 +54,15 @@ document.addEventListener("DOMContentLoaded", function () {
         saveButton.addEventListener('click', function () {
             saveLink(linkInput.value, linkNameInput.value);
         });
-        linkSBlock.appendChild(saveButton);
 
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Видалити';
+        deleteButton.addEventListener('click', function () {
+            deleteLink(linkInput.value, linkNameInput.value, linkSBlock);
+        });
+
+        linkSBlock.appendChild(saveButton);
+        linkSBlock.appendChild(deleteButton);
         linksContainer.appendChild(linkSBlock);
     }
 
@@ -69,7 +73,13 @@ document.addEventListener("DOMContentLoaded", function () {
         alert('Посилання збережено!');
     }
 
-
+    function deleteLink(link, label, linkSBlock) {
+        let links = JSON.parse(localStorage.getItem('links')) || [];
+        links = links.filter(savedLink => savedLink.link !== link || savedLink.label !== label);
+        localStorage.setItem('links', JSON.stringify(links));
+        linkSBlock.remove();
+        alert('Посилання видалено!');
+    }
 
 
     //
