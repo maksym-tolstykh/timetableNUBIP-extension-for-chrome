@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Налаштування розширення</title>
+
+    <script defer src="options.js"></script>
+    <style>
+      .buttons {
+        display: flex;
+      }
+      .buttons button {
+        width: 175px;
+      }
+      .linkSettings .linkSBlock {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      .linkSettings .linkSBlock input {
+        margin-right: 10px;
+      }
+      .linkSettings button {
+        width: 100px;
+      }
+      #addLink{
+        width: 250px;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Налаштування</h2>
+    <div class="linkSettings">
+      <!-- ID гугл юзера для посилань -->
+      <!-- <div class="linkSBlock">
+        <div>
+          <label for="userId">ID користувача</label>
+          <input type="number" id="userId" />
+        </div>
+        <button>Зберегти</button>
+      </div> -->
+
+      <!-- Динамічні посилання -->
+      <div id="linksContainer"></div>
+      <button id="addLink">Додати посилання</button>
+    </div>
+    <div>
+      <!-- Список Факультетів-->
+      <div>
+        <label for="faculties">Факультет</label>
+        <select name="faculties" id="faculties"></select>
+      </div>
+      <!-- Список груп -->
+      <div>
+        <label for="group">Група</label>
+        <select name="group" id="group"></select>
+      </div>
+      <div class="buttons">
+        <button id="findSchedule">Знайти розклад</button>
+        <button id="saveSchedule">Зберегти розклад</button>
+        <button id="loadSchedule">Завантажити розклад</button>
+      </div>
+    </div>
+    <h2>Розклад</h2>
+    <div id="timetable"></div>
+    <div class="version">
+      <span>V1.1</span>
+    </div>
+  </body>
+</html>

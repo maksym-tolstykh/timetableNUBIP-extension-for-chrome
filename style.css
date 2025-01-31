@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    /* padding: 20px; */
+    padding: 0;
+    margin: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    scrollbar-width: none;
+}
+
+h2 {
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 6px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    font-weight: bold;
+    color: #fff;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+    color: #444;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Пошук та налаштування */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.table-header .icons {
+    display: flex;
+    gap: 10px;
+}
+
+.table-header .icons svg {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.table-header .icons svg:hover {
+    color: #333;
+}
