@@ -13,9 +13,9 @@
     "default_popup": "timetable.html"
   },
   "permissions": [
-    "storage",
-    "activeTab",
-    "scripting"
+
+
+
 
   ],
   "background": {
