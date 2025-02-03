@@ -16,59 +16,64 @@ document.addEventListener("DOMContentLoaded", function () {
     function addLinkField(link = '', label = '') {
         const linkSBlock = document.createElement('div');
         linkSBlock.className = 'linkSBlock';
-
+    
         // Посилання
         const linkLabelBlock = document.createElement('div');
         const linkLabel = document.createElement('label');
         linkLabel.textContent = 'Посилання:';
         linkLabelBlock.appendChild(linkLabel);
-
-
+    
         const linkInput = document.createElement('input');
         linkInput.type = 'text';
         linkInput.value = link;
-
         linkLabelBlock.appendChild(linkInput);
         linkSBlock.appendChild(linkLabelBlock);
-
-
+    
         // Лейбл
         const linkNameBlock = document.createElement('div');
         const linkNameLabel = document.createElement('label');
         linkNameLabel.textContent = 'Назва:';
         linkNameLabel.htmlFor = 'linkName';
         linkNameBlock.appendChild(linkNameLabel);
-
-
+    
         const linkNameInput = document.createElement('input');
         linkNameInput.setAttribute('maxlength', '25');
         linkNameInput.id = 'linkName';
         linkNameInput.type = 'text';
         linkNameInput.value = label;
-
         linkNameBlock.appendChild(linkNameInput);
         linkSBlock.appendChild(linkNameBlock);
-
+    
         const saveButton = document.createElement('button');
         saveButton.textContent = 'Зберегти';
         saveButton.addEventListener('click', function () {
-            saveLink(linkInput.value, linkNameInput.value);
+            saveLink(link, linkInput.value, linkNameInput.value);
         });
-
+        linkSBlock.appendChild(saveButton);
+    
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Видалити';
         deleteButton.addEventListener('click', function () {
             deleteLink(linkInput.value, linkNameInput.value, linkSBlock);
         });
-
-        linkSBlock.appendChild(saveButton);
         linkSBlock.appendChild(deleteButton);
+    
         linksContainer.appendChild(linkSBlock);
     }
 
-    function saveLink(link, label) {
-        const links = JSON.parse(localStorage.getItem('links')) || [];
-        links.push({ link, label });
+    function saveLink(oldLink, newLink, label) {
+        let links = JSON.parse(localStorage.getItem('links')) || [];
+        const existingLinkIndex = links.findIndex(savedLink => savedLink.link === oldLink);
+    
+        if (existingLinkIndex !== -1) {
+            // Оновити існуюче посилання
+            links[existingLinkIndex].link = newLink;
+            links[existingLinkIndex].label = label;
+        } else {
+            // Додати нове посилання
+            links.push({ link: newLink, label });
+        }
+    
         localStorage.setItem('links', JSON.stringify(links));
         alert('Посилання збережено!');
     }
