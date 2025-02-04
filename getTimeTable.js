@@ -1,4 +1,6 @@
-
+document.addEventListener('DOMContentLoaded', () => {
+ 
+});
 
 
 const savedTimetable = JSON.parse(localStorage.getItem('savedTimetable'));
@@ -8,12 +10,13 @@ function getWeekType() {
   const startDate = new Date(new Date().getFullYear(), 0, 1); // 1 січня поточного року
   const currentDate = new Date();
   const weekNumber = Math.ceil(((currentDate - startDate) / (1000 * 60 * 60 * 24) + startDate.getDay() + 1) / 7);
-  return weekNumber % 2 === 0 ? 'even' : 'odd'; // Знаменник - парний тиждень, Чисельник - непарний тиждень
+  return weekNumber % 2 === 0 ? 'odd' : 'even'; // Знаменник - парний тиждень, Чисельник - непарний тиждень
 }
+
+
 
 function buildTimetable(data) {
   const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-  const dayNames = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця'];
   const timeSlots = [
     '1. 8:30-9:50',
     '2. 10:10-11:30',
@@ -23,16 +26,16 @@ function buildTimetable(data) {
     '6. 16:50-18:10',
     '7. 18:30-19:50'
   ];
-  const weekType = getWeekType(); 
+  const weekType = getWeekType();
   console.log(weekType);
-  
+
   const table = document.createElement('table');
   const headerRow = document.createElement('tr');
-  headerRow.innerHTML = '<th>Час</th><th>Понеділок</th><th>Вівторок</th><th>Середа</th><th>Четвер</th><th>П\'ятниця</th>';
+  headerRow.innerHTML = `<th>${getWeekType() === 'odd' ? 'Чисельник' : 'Знаменник'}</th><th>Понеділок</th><th>Вівторок</th><th>Середа</th><th>Четвер</th><th>П\'ятниця</th>`;
   table.appendChild(headerRow);
 
-  const currentDayIndex = new Date().getDay() - 1; 
-  const currentTime = new Date().getHours() * 60 + new Date().getMinutes(); 
+  const currentDayIndex = new Date().getDay() - 1;
+  const currentTime = new Date().getHours() * 60 + new Date().getMinutes();
 
   for (let i = 0; i < timeSlots.length; i++) {
     const row = document.createElement('tr');
@@ -69,7 +72,7 @@ function buildTimetable(data) {
     table.appendChild(row);
   }
   const timetableContainer = document.querySelector('#timetable');
-  timetableContainer.innerHTML = ''; 
+  timetableContainer.innerHTML = '';
   timetableContainer.appendChild(table);
 }
 
